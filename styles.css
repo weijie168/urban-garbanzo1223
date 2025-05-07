@@ -1,0 +1,147 @@
+#particles-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.timeline {
+    width: 90%; /* 调整宽度以适应不同屏幕 */
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto;
+    position: relative;
+    overflow-x: scroll;
+    white-space: nowrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+}
+
+.timeline-item {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-item h2 {
+    margin-bottom: 10px;
+    color: #333;
+    background: linear-gradient(45deg, #007BFF, #00C6FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #007BFF, #00C6FF);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover:before {
+    transform: scaleX(1);
+}
+
+#thermometer-container {
+    width: 200px;
+    margin: 50px auto;
+    text-align: center;
+    perspective: 1000px;
+}
+
+#thermometer {
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: rotateThermometer 5s infinite linear;
+}
+
+@keyframes rotateThermometer {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+#thermometer-value {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#poster-design-panel {
+    margin: 20px auto;
+    width: 90%; /* 调整宽度以适应不同屏幕 */
+    max-width: 300px; /* 设置最大宽度 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#poster-design-panel label {
+    margin-bottom: 5px;
+}
+
+#generate-ar-poster {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #FF5733, #FFC300);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#generate-ar-poster:hover {
+    transform: translateY(-3px);
+}
+
+/* 新增分享按钮样式 */
+#share-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#share-button:hover {
+    transform: translateY(-3px);
+}
+
+/* 新增提示框样式 */
+#hint-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}    

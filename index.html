@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不会轻易出错的网页</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- 3D粒子开场 -->
+    <div id="particles-container"></div>
+
+    <!-- 时间轴对比 -->
+    <div class="timeline">
+        <div class="timeline-item" data-year="1919">
+            <h2>1919年</h2>
+            <p>那年，巴黎和会外交失败的消息传来，满腔热血的青年们走上街头，为救国存亡振臂高呼，他们用青春和勇气点燃了民族觉醒的火焰</p>
+        </div>
+        <div class="timeline-item" data-year="2024">
+            <h2>2024年</h2>
+            <p>当下，科技飞速发展，青年们站在时代</p>
+        </div>
+    </div>
+
+    <!-- 觉醒温度计 -->
+    <div id="thermometer-container">
+        <canvas id="thermometer"></canvas>
+        <div id="thermometer-value">0</div>
+    </div>
+
+    <!-- AR海报生成 -->
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-plane id="ar-poster" width="2" height="3" position="0 0 0" rotation="0 0 0"></a-plane>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <div id="poster-design-panel">
+        <input type="color" id="poster-bg-color" value="#ffffff">
+        <select id="poster-font-family">
+            <option value="Arial">Arial</option>
+            <option value="楷体">楷体</option>
+            <option value="微软雅黑">微软雅黑</option>
+        </select>
+        <input type="number" id="poster-font-size" value="30">
+        <input type="color" id="poster-text-color" value="#000000">
+    </div>
+    <button id="generate-ar-poster">生成AR海报</button>
+
+    <!-- 新增分享按钮 -->
+    <button id="share-button">分享海报</button>
+
+    <!-- 新增提示框 -->
+    <div id="hint-box">海报已复制到剪贴板，快去分享吧！</div>
+</body>
+</html>    
